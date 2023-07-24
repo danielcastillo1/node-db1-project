@@ -16,12 +16,7 @@ router.get(
   "/:id",
   md.checkAccountId,
   async (req, res, next) => {
-    try {
-      const accounts = await account.getById(req.params.id);
-      res.json(accounts);
-    } catch (err) {
-      next(err);
-    }
+    res.json(req.account);
   }
 );
 
